@@ -72,7 +72,7 @@ namespace GardenGroupUI
             //dateTimePicker
             textBoxSubjType.Clear();
             comboBoxIncidentType.SelectedIndex = -1;
-            comboBoxUsers.SelectedIndex = -1;
+            //comboBoxUsers
             comboBoxPriority.SelectedIndex = -1;
             comboBoxDeadline.SelectedIndex = -1;
             lblEmailUserEmpty.Text = "";
@@ -102,11 +102,11 @@ namespace GardenGroupUI
 
         private void comboBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedValue = comboBoxUsers.SelectedItem.ToString();
+            string name = comboBoxUsers.SelectedItem.ToString();
             foreach (User usr in users)
             {
                 //get user by email
-                if (usr.FirstName == selectedValue)
+                if (usr.FirstName == name)
                 {
                     lblEmailUserEmpty.Text = usr.Email;
                 }

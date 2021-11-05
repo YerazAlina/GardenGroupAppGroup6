@@ -8,8 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GardenGroupModel;
-using GardenGroupDAL;
-using GardenGroupDAO;
 using GardenGroupLogic;
 using GardenGroupUI;
 

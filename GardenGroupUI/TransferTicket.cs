@@ -82,9 +82,17 @@ namespace GardenGroupUI
 
         private void comboBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedValue = comboBoxUsers.SelectedItem.ToString();
-            currentTicket.ReportedByUser = selectedValue;
+            string name = comboBoxUsers.SelectedItem.ToString();
+            currentTicket.ReportedByUser = name;
+            
+            foreach (User usr in users)
+            {
+                if (usr.FirstName == name)
+                {
+                    currentTicket.EmailUser = usr.Email;
+                }
 
+            }
             //email..
         }
     }
