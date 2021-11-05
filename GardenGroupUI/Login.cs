@@ -71,7 +71,7 @@ namespace GardenGroupUI
                 }
                 else if(user.TypeOfUser == TypeOfUser.ServiceDesk)
                 {
-                    formNewIncident newIncident = new formNewIncident();
+                    CreateTickets newIncident = new CreateTickets();
                     newIncident.Show();
                     this.Hide();
                 }

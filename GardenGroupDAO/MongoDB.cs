@@ -68,7 +68,7 @@ namespace GardenGroupDAO
             var collection = db.GetCollection<Ticket>("tickets");
             collection.InsertOne(ticket);
         }
-        
+
         public List<Ticket> ReadAllTickets()
         {
             IMongoCollection<Ticket> ticketCollection = db.GetCollection<Ticket>("tickets");
@@ -76,15 +76,10 @@ namespace GardenGroupDAO
             return tickets;
         }
 
-        public void ChangeTicketUser()
-        {
-
-        }
-
         public void TicketArchiver(Ticket ticket)
         {
-                var collection = db.GetCollection<Ticket>("archivedTickets");
-                collection.InsertOne(ticket);      
+            var collection = db.GetCollection<Ticket>("archivedTickets");
+            collection.InsertOne(ticket);
         }
 
         public void RemoveUser(ObjectId user)
@@ -97,7 +92,7 @@ namespace GardenGroupDAO
         public void RemoveTicket(ObjectId ticket)
         {
             var collection = db.GetCollection<BsonDocument>("tickets");
-            var deletetickets= Builders<BsonDocument>.Filter.Eq("_id", ticket);
+            var deletetickets = Builders<BsonDocument>.Filter.Eq("_id", ticket);
             collection.DeleteOne(deletetickets);
         }
 
@@ -120,6 +115,13 @@ namespace GardenGroupDAO
             var collection = db.GetCollection<User>("users");
             var filter = Builders<User>.Filter.Eq("_id", user.Id);
             collection.ReplaceOne(filter, user, new ReplaceOptions() { IsUpsert = true });
+        }
+
+        public void UpdateTicket(Ticket ticket)
+        {
+            var collection = db.GetCollection<Ticket>("tickets");
+            var filter = Builders<Ticket>.Filter.Eq("_id", ticket.TicketId);
+            collection.ReplaceOne(filter, ticket, new ReplaceOptions() { IsUpsert = true });
         }
     }
 }

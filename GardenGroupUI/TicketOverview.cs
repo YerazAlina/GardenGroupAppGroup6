@@ -67,7 +67,7 @@ namespace GardenGroupUI
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            formNewIncident formNewIncident = new formNewIncident();
+            CreateTickets formNewIncident = new CreateTickets();
             formNewIncident.ShowDialog();
         }
 

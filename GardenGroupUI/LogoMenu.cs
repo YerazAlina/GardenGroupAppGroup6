@@ -24,7 +24,7 @@ namespace GardenGroupUI
 
         private void bttnIncidentManagement_Click(object sender, EventArgs e)
         {
-            formNewIncident formNewIncident = new formNewIncident();
+            CreateTickets formNewIncident = new CreateTickets();
             formNewIncident.Show();
             Hide();
         }

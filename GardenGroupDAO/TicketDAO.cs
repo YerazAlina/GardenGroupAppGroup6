@@ -14,11 +14,11 @@ namespace GardenGroupDAL
             return db.TicketCollection();
         }
 
-        public void ChangeTicketUser(Ticket ticket) 
+        public void UpdateTicket(Ticket ticket)
         {
-            db.ChangeTicketUser();
+            db.UpdateTicket(ticket);
         }
-        
+
         public List<Ticket> ReadAllTickets()
         {
             return db.ReadAllTickets();
@@ -33,7 +33,5 @@ namespace GardenGroupDAL
         {
             db.RemoveTicket(ticket);
         }
-
-
     }
 }

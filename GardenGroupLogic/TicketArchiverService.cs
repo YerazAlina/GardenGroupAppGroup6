@@ -3,8 +3,6 @@ using GardenGroupModel;
 using MongoDB.Bson;
 using System.Collections.Generic;
 
-
-
 namespace GardenGroupLogic
 {
     public class TicketArchiverService

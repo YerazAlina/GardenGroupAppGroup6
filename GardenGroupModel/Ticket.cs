@@ -21,8 +21,14 @@ namespace GardenGroupModel
         [BsonElement("ReportedByUser")]
         public string ReportedByUser { get; set; }
 
+        [BsonElement("EmailUser")]
+        public string EmailUser { get; set; }
+
         [BsonRepresentation(BsonType.String)]
         public Priority TicketPriority { get; set; }
+        
+        [BsonRepresentation(BsonType.String)]
+        public TicketStatus TicketStatus { get; set; }
 
         [BsonElement("TicketDeadline")]
         public string TicketDeadline { get; set; }
@@ -39,5 +45,10 @@ namespace GardenGroupModel
     public enum Priority
     {
         Low, Normal, High
+    }
+
+    public enum TicketStatus
+    {
+        Open, InProgress, OnHold, Escalated, Closed
     }
 }

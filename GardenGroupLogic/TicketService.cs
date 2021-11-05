@@ -28,5 +28,10 @@ namespace GardenGroupLogic
         {
             ticketDAO.RemoveTicket(ticket);
         }
+
+        public void UpdateTicket(Ticket ticket)
+        {
+            ticketDAO.UpdateTicket(ticket);
+        }
     }
 }

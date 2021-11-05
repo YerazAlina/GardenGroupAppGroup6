@@ -10,21 +10,22 @@ using GardenGroupLogic;
 
 namespace GardenGroupUI
 {
-    public partial class formNewIncident : Form
+    public partial class CreateTickets : Form
     {
         private Ticket newTicket;
+        private List<User> users;
 
-        public formNewIncident()
+        public CreateTickets()
         {
             InitializeComponent();
-            
+
             //add all users to the combo box
             UserService userService = new UserService();
-            List<User> users = userService.GetUserCollection();
+            users = userService.GetUserCollection();
 
             foreach (User usr in users)
             {
-                comboBoxUsers.Items.Add(usr.FirstName); 
+                comboBoxUsers.Items.Add(usr.FirstName);
             }
 
             //putting all enums in the combo box
@@ -39,14 +40,19 @@ namespace GardenGroupUI
             TicketService ticketService = new TicketService();
             newTicket = new Ticket();
 
+            //ticket status for new ticket
+            newTicket.TicketStatus = TicketStatus.Open;
+
             newTicket.TicketDate = dateTimePicker.Value;
             newTicket.IncidentSubject = textBoxSubjType.Text;
-            newTicket.TypeOfIncident = (IncidentType)comboBoxIncidentType.SelectedItem; //this doesnt work
-            newTicket.ReportedByUser = comboBoxUsers.SelectedItem.ToString(); //firstname only?
+            newTicket.TypeOfIncident = (IncidentType)comboBoxIncidentType.SelectedItem; 
+            newTicket.ReportedByUser = comboBoxUsers.SelectedItem.ToString(); 
 
             newTicket.TicketPriority = (Priority)comboBoxPriority.SelectedItem;
             newTicket.TicketDeadline = comboBoxDeadline.SelectedItem.ToString();
             newTicket.TicketDescription = textBoxDescription.Text;
+
+            newTicket.EmailUser = lblEmailUserEmpty.Text;
 
             //send ticket to database
             ticketService.AddTicket(newTicket);
@@ -69,6 +75,7 @@ namespace GardenGroupUI
             comboBoxUsers.SelectedIndex = -1;
             comboBoxPriority.SelectedIndex = -1;
             comboBoxDeadline.SelectedIndex = -1;
+            lblEmailUserEmpty.Text = "";
             textBoxDescription.Clear();
         }
 
@@ -81,8 +88,8 @@ namespace GardenGroupUI
 
         private void bttnIncidentManagement_Click(object sender, EventArgs e)
         {
-            formNewIncident formNewIncident = new formNewIncident();
-            formNewIncident.ShowDialog();
+            CreateTickets createTickets = new CreateTickets();
+            createTickets.ShowDialog();
             this.Close();
         }
 
@@ -91,6 +98,18 @@ namespace GardenGroupUI
             UserMangement userMangement = new UserMangement();
             userMangement.ShowDialog();
             this.Close();
+        }
+
+        private void comboBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedValue = comboBoxUsers.SelectedItem.ToString();
+            foreach (User usr in users)
+            {
+                if (usr.FirstName == selectedValue)
+                {
+                    lblEmailUserEmpty.Text = usr.Email;
+                }
+            }
         }
     }
 }

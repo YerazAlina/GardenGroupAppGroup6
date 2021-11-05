@@ -66,10 +66,10 @@ namespace GardenGroupUI
             // 
             this.lblNoDesk.AutoSize = true;
             this.lblNoDesk.Font = new System.Drawing.Font("Segoe UI", 26.14286F, System.Drawing.FontStyle.Bold);
-            this.lblNoDesk.Location = new System.Drawing.Point(265, 4);
-            this.lblNoDesk.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNoDesk.Location = new System.Drawing.Point(493, -1);
+            this.lblNoDesk.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNoDesk.Name = "lblNoDesk";
-            this.lblNoDesk.Size = new System.Drawing.Size(149, 47);
+            this.lblNoDesk.Size = new System.Drawing.Size(264, 84);
             this.lblNoDesk.TabIndex = 0;
             this.lblNoDesk.Text = "NoDesk";
             // 
@@ -77,10 +77,10 @@ namespace GardenGroupUI
             // 
             this.lblLicenseInfo.AutoSize = true;
             this.lblLicenseInfo.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold);
-            this.lblLicenseInfo.Location = new System.Drawing.Point(214, 40);
-            this.lblLicenseInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLicenseInfo.Location = new System.Drawing.Point(392, 74);
+            this.lblLicenseInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLicenseInfo.Name = "lblLicenseInfo";
-            this.lblLicenseInfo.Size = new System.Drawing.Size(215, 19);
+            this.lblLicenseInfo.Size = new System.Drawing.Size(368, 32);
             this.lblLicenseInfo.TabIndex = 1;
             this.lblLicenseInfo.Text = "Licensed to: The Garden Group";
             // 
@@ -256,10 +256,10 @@ namespace GardenGroupUI
             // bttnUserManagement
             // 
             this.bttnUserManagement.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.bttnUserManagement.Location = new System.Drawing.Point(270, 59);
-            this.bttnUserManagement.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.bttnUserManagement.Location = new System.Drawing.Point(461, 115);
+            this.bttnUserManagement.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.bttnUserManagement.Name = "bttnUserManagement";
-            this.bttnUserManagement.Size = new System.Drawing.Size(109, 20);
+            this.bttnUserManagement.Size = new System.Drawing.Size(200, 37);
             this.bttnUserManagement.TabIndex = 28;
             this.bttnUserManagement.Text = "User Management";
             this.bttnUserManagement.UseVisualStyleBackColor = false;
@@ -268,10 +268,10 @@ namespace GardenGroupUI
             // bttnIncidentManagement
             // 
             this.bttnIncidentManagement.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.bttnIncidentManagement.Location = new System.Drawing.Point(139, 59);
-            this.bttnIncidentManagement.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.bttnIncidentManagement.Location = new System.Drawing.Point(253, 116);
+            this.bttnIncidentManagement.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.bttnIncidentManagement.Name = "bttnIncidentManagement";
-            this.bttnIncidentManagement.Size = new System.Drawing.Size(109, 20);
+            this.bttnIncidentManagement.Size = new System.Drawing.Size(200, 37);
             this.bttnIncidentManagement.TabIndex = 27;
             this.bttnIncidentManagement.Text = "Incident Management";
             this.bttnIncidentManagement.UseVisualStyleBackColor = false;
@@ -280,10 +280,10 @@ namespace GardenGroupUI
             // bttnDashboard
             // 
             this.bttnDashboard.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.bttnDashboard.Location = new System.Drawing.Point(8, 59);
-            this.bttnDashboard.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.bttnDashboard.Location = new System.Drawing.Point(45, 116);
+            this.bttnDashboard.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.bttnDashboard.Name = "bttnDashboard";
-            this.bttnDashboard.Size = new System.Drawing.Size(109, 20);
+            this.bttnDashboard.Size = new System.Drawing.Size(200, 37);
             this.bttnDashboard.TabIndex = 26;
             this.bttnDashboard.Text = "Dashboard";
             this.bttnDashboard.UseVisualStyleBackColor = false;
@@ -291,15 +291,15 @@ namespace GardenGroupUI
             // 
             // LogoMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 379);
+            this.ClientSize = new System.Drawing.Size(770, 700);
             this.Controls.Add(this.bttnUserManagement);
             this.Controls.Add(this.bttnIncidentManagement);
             this.Controls.Add(this.bttnDashboard);
             this.Controls.Add(this.lblLicenseInfo);
             this.Controls.Add(this.lblNoDesk);
-            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "LogoMenu";
             this.Text = "LogoMenu";
             this.ResumeLayout(false);
