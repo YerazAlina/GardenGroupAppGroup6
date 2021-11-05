@@ -73,7 +73,11 @@ namespace GardenGroupUI
             TicketService ticketService = new TicketService();
             ticketService.UpdateTicket(currentTicket);
 
-            MessageBox.Show("User on ticket changed to:" + currentTicket.ReportedByUser);
+            MessageBox.Show("User on ticket changed to: " + currentTicket.ReportedByUser);
+
+            TicketOverview ticketOverview = new TicketOverview();
+            ticketOverview.Show();
+            this.Close();
         }
 
         private void comboBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
