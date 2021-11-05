@@ -35,7 +35,6 @@ namespace GardenGroupUI
             this.lblLicenseInfo = new System.Windows.Forms.Label();
             this.lblNoDesk = new System.Windows.Forms.Label();
             this.lblTransferTicket = new System.Windows.Forms.Label();
-            this.lblEmailUser = new System.Windows.Forms.Label();
             this.lblDeadlineFollowup = new System.Windows.Forms.Label();
             this.lblPriority = new System.Windows.Forms.Label();
             this.lblReportedbyUser = new System.Windows.Forms.Label();
@@ -43,7 +42,6 @@ namespace GardenGroupUI
             this.lblSubjectIcident = new System.Windows.Forms.Label();
             this.lblDateTimeReported = new System.Windows.Forms.Label();
             this.lblDescript = new System.Windows.Forms.Label();
-            this.lblEmailUserEmp = new System.Windows.Forms.Label();
             this.lblDeadlineEmpty = new System.Windows.Forms.Label();
             this.lblPriorityEmpty = new System.Windows.Forms.Label();
             this.lblReportedByUserEmpty = new System.Windows.Forms.Label();
@@ -52,6 +50,10 @@ namespace GardenGroupUI
             this.lblDateTimeReportedEmpty = new System.Windows.Forms.Label();
             this.lblDescriptionEmpty = new System.Windows.Forms.Label();
             this.bttnTransferTicket = new System.Windows.Forms.Button();
+            this.groupBoxSelected = new System.Windows.Forms.GroupBox();
+            this.comboBoxUsers = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBoxSelected.SuspendLayout();
             this.SuspendLayout();
             // 
             // bttnUserManagement
@@ -64,6 +66,7 @@ namespace GardenGroupUI
             this.bttnUserManagement.TabIndex = 33;
             this.bttnUserManagement.Text = "User Management";
             this.bttnUserManagement.UseVisualStyleBackColor = false;
+            this.bttnUserManagement.Click += new System.EventHandler(this.bttnUserManagement_Click);
             // 
             // bttnIncidentManagement
             // 
@@ -75,6 +78,7 @@ namespace GardenGroupUI
             this.bttnIncidentManagement.TabIndex = 32;
             this.bttnIncidentManagement.Text = "Incident Management";
             this.bttnIncidentManagement.UseVisualStyleBackColor = false;
+            this.bttnIncidentManagement.Click += new System.EventHandler(this.bttnIncidentManagement_Click);
             // 
             // bttnDashboard
             // 
@@ -86,6 +90,7 @@ namespace GardenGroupUI
             this.bttnDashboard.TabIndex = 31;
             this.bttnDashboard.Text = "Dashboard";
             this.bttnDashboard.UseVisualStyleBackColor = false;
+            this.bttnDashboard.Click += new System.EventHandler(this.bttnDashboard_Click);
             // 
             // lblLicenseInfo
             // 
@@ -120,20 +125,10 @@ namespace GardenGroupUI
             this.lblTransferTicket.TabIndex = 34;
             this.lblTransferTicket.Text = "Transfer Ticket";
             // 
-            // lblEmailUser
-            // 
-            this.lblEmailUser.AutoSize = true;
-            this.lblEmailUser.Location = new System.Drawing.Point(23, 474);
-            this.lblEmailUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEmailUser.Name = "lblEmailUser";
-            this.lblEmailUser.Size = new System.Drawing.Size(116, 25);
-            this.lblEmailUser.TabIndex = 42;
-            this.lblEmailUser.Text = "E-mail user:";
-            // 
             // lblDeadlineFollowup
             // 
             this.lblDeadlineFollowup.AutoSize = true;
-            this.lblDeadlineFollowup.Location = new System.Drawing.Point(23, 584);
+            this.lblDeadlineFollowup.Location = new System.Drawing.Point(29, 337);
             this.lblDeadlineFollowup.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeadlineFollowup.Name = "lblDeadlineFollowup";
             this.lblDeadlineFollowup.Size = new System.Drawing.Size(184, 25);
@@ -143,7 +138,7 @@ namespace GardenGroupUI
             // lblPriority
             // 
             this.lblPriority.AutoSize = true;
-            this.lblPriority.Location = new System.Drawing.Point(23, 530);
+            this.lblPriority.Location = new System.Drawing.Point(29, 283);
             this.lblPriority.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPriority.Name = "lblPriority";
             this.lblPriority.Size = new System.Drawing.Size(77, 25);
@@ -153,7 +148,7 @@ namespace GardenGroupUI
             // lblReportedbyUser
             // 
             this.lblReportedbyUser.AutoSize = true;
-            this.lblReportedbyUser.Location = new System.Drawing.Point(23, 422);
+            this.lblReportedbyUser.Location = new System.Drawing.Point(29, 222);
             this.lblReportedbyUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblReportedbyUser.Name = "lblReportedbyUser";
             this.lblReportedbyUser.Size = new System.Drawing.Size(166, 25);
@@ -163,7 +158,7 @@ namespace GardenGroupUI
             // lblTypeIcident
             // 
             this.lblTypeIcident.AutoSize = true;
-            this.lblTypeIcident.Location = new System.Drawing.Point(23, 364);
+            this.lblTypeIcident.Location = new System.Drawing.Point(29, 164);
             this.lblTypeIcident.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTypeIcident.Name = "lblTypeIcident";
             this.lblTypeIcident.Size = new System.Drawing.Size(156, 25);
@@ -173,7 +168,7 @@ namespace GardenGroupUI
             // lblSubjectIcident
             // 
             this.lblSubjectIcident.AutoSize = true;
-            this.lblSubjectIcident.Location = new System.Drawing.Point(23, 303);
+            this.lblSubjectIcident.Location = new System.Drawing.Point(29, 103);
             this.lblSubjectIcident.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubjectIcident.Name = "lblSubjectIcident";
             this.lblSubjectIcident.Size = new System.Drawing.Size(171, 25);
@@ -183,7 +178,7 @@ namespace GardenGroupUI
             // lblDateTimeReported
             // 
             this.lblDateTimeReported.AutoSize = true;
-            this.lblDateTimeReported.Location = new System.Drawing.Point(23, 250);
+            this.lblDateTimeReported.Location = new System.Drawing.Point(29, 50);
             this.lblDateTimeReported.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateTimeReported.Name = "lblDateTimeReported";
             this.lblDateTimeReported.Size = new System.Drawing.Size(186, 25);
@@ -193,27 +188,17 @@ namespace GardenGroupUI
             // lblDescript
             // 
             this.lblDescript.AutoSize = true;
-            this.lblDescript.Location = new System.Drawing.Point(23, 638);
+            this.lblDescript.Location = new System.Drawing.Point(29, 391);
             this.lblDescript.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescript.Name = "lblDescript";
             this.lblDescript.Size = new System.Drawing.Size(115, 25);
             this.lblDescript.TabIndex = 35;
             this.lblDescript.Text = "Description:";
             // 
-            // lblEmailUserEmp
-            // 
-            this.lblEmailUserEmp.AutoSize = true;
-            this.lblEmailUserEmp.Location = new System.Drawing.Point(268, 474);
-            this.lblEmailUserEmp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEmailUserEmp.Name = "lblEmailUserEmp";
-            this.lblEmailUserEmp.Size = new System.Drawing.Size(27, 25);
-            this.lblEmailUserEmp.TabIndex = 50;
-            this.lblEmailUserEmp.Text = "...";
-            // 
             // lblDeadlineEmpty
             // 
             this.lblDeadlineEmpty.AutoSize = true;
-            this.lblDeadlineEmpty.Location = new System.Drawing.Point(268, 584);
+            this.lblDeadlineEmpty.Location = new System.Drawing.Point(274, 337);
             this.lblDeadlineEmpty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeadlineEmpty.Name = "lblDeadlineEmpty";
             this.lblDeadlineEmpty.Size = new System.Drawing.Size(27, 25);
@@ -223,7 +208,7 @@ namespace GardenGroupUI
             // lblPriorityEmpty
             // 
             this.lblPriorityEmpty.AutoSize = true;
-            this.lblPriorityEmpty.Location = new System.Drawing.Point(268, 530);
+            this.lblPriorityEmpty.Location = new System.Drawing.Point(274, 283);
             this.lblPriorityEmpty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPriorityEmpty.Name = "lblPriorityEmpty";
             this.lblPriorityEmpty.Size = new System.Drawing.Size(27, 25);
@@ -233,7 +218,7 @@ namespace GardenGroupUI
             // lblReportedByUserEmpty
             // 
             this.lblReportedByUserEmpty.AutoSize = true;
-            this.lblReportedByUserEmpty.Location = new System.Drawing.Point(268, 422);
+            this.lblReportedByUserEmpty.Location = new System.Drawing.Point(274, 222);
             this.lblReportedByUserEmpty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblReportedByUserEmpty.Name = "lblReportedByUserEmpty";
             this.lblReportedByUserEmpty.Size = new System.Drawing.Size(27, 25);
@@ -243,7 +228,7 @@ namespace GardenGroupUI
             // lblIncidentTypeEmpty
             // 
             this.lblIncidentTypeEmpty.AutoSize = true;
-            this.lblIncidentTypeEmpty.Location = new System.Drawing.Point(268, 364);
+            this.lblIncidentTypeEmpty.Location = new System.Drawing.Point(274, 164);
             this.lblIncidentTypeEmpty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIncidentTypeEmpty.Name = "lblIncidentTypeEmpty";
             this.lblIncidentTypeEmpty.Size = new System.Drawing.Size(27, 25);
@@ -253,7 +238,7 @@ namespace GardenGroupUI
             // lblSubjIncidentEmpty
             // 
             this.lblSubjIncidentEmpty.AutoSize = true;
-            this.lblSubjIncidentEmpty.Location = new System.Drawing.Point(268, 303);
+            this.lblSubjIncidentEmpty.Location = new System.Drawing.Point(274, 103);
             this.lblSubjIncidentEmpty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubjIncidentEmpty.Name = "lblSubjIncidentEmpty";
             this.lblSubjIncidentEmpty.Size = new System.Drawing.Size(27, 25);
@@ -263,7 +248,7 @@ namespace GardenGroupUI
             // lblDateTimeReportedEmpty
             // 
             this.lblDateTimeReportedEmpty.AutoSize = true;
-            this.lblDateTimeReportedEmpty.Location = new System.Drawing.Point(268, 250);
+            this.lblDateTimeReportedEmpty.Location = new System.Drawing.Point(274, 50);
             this.lblDateTimeReportedEmpty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateTimeReportedEmpty.Name = "lblDateTimeReportedEmpty";
             this.lblDateTimeReportedEmpty.Size = new System.Drawing.Size(27, 25);
@@ -273,7 +258,7 @@ namespace GardenGroupUI
             // lblDescriptionEmpty
             // 
             this.lblDescriptionEmpty.AutoSize = true;
-            this.lblDescriptionEmpty.Location = new System.Drawing.Point(268, 638);
+            this.lblDescriptionEmpty.Location = new System.Drawing.Point(274, 391);
             this.lblDescriptionEmpty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescriptionEmpty.Name = "lblDescriptionEmpty";
             this.lblDescriptionEmpty.Size = new System.Drawing.Size(27, 25);
@@ -282,35 +267,66 @@ namespace GardenGroupUI
             // 
             // bttnTransferTicket
             // 
-            this.bttnTransferTicket.Location = new System.Drawing.Point(500, 726);
+            this.bttnTransferTicket.Location = new System.Drawing.Point(453, 781);
             this.bttnTransferTicket.Name = "bttnTransferTicket";
             this.bttnTransferTicket.Size = new System.Drawing.Size(186, 71);
             this.bttnTransferTicket.TabIndex = 51;
             this.bttnTransferTicket.Text = "Transfer Ticket";
             this.bttnTransferTicket.UseVisualStyleBackColor = true;
+            this.bttnTransferTicket.Click += new System.EventHandler(this.bttnTransferTicket_Click);
+            // 
+            // groupBoxSelected
+            // 
+            this.groupBoxSelected.Controls.Add(this.lblDescript);
+            this.groupBoxSelected.Controls.Add(this.lblDateTimeReported);
+            this.groupBoxSelected.Controls.Add(this.lblDeadlineEmpty);
+            this.groupBoxSelected.Controls.Add(this.lblSubjectIcident);
+            this.groupBoxSelected.Controls.Add(this.lblPriorityEmpty);
+            this.groupBoxSelected.Controls.Add(this.lblTypeIcident);
+            this.groupBoxSelected.Controls.Add(this.lblReportedByUserEmpty);
+            this.groupBoxSelected.Controls.Add(this.lblReportedbyUser);
+            this.groupBoxSelected.Controls.Add(this.lblIncidentTypeEmpty);
+            this.groupBoxSelected.Controls.Add(this.lblPriority);
+            this.groupBoxSelected.Controls.Add(this.lblSubjIncidentEmpty);
+            this.groupBoxSelected.Controls.Add(this.lblDeadlineFollowup);
+            this.groupBoxSelected.Controls.Add(this.lblDateTimeReportedEmpty);
+            this.groupBoxSelected.Controls.Add(this.lblDescriptionEmpty);
+            this.groupBoxSelected.Location = new System.Drawing.Point(23, 240);
+            this.groupBoxSelected.Name = "groupBoxSelected";
+            this.groupBoxSelected.Size = new System.Drawing.Size(616, 455);
+            this.groupBoxSelected.TabIndex = 52;
+            this.groupBoxSelected.TabStop = false;
+            this.groupBoxSelected.Text = "Selected Ticket";
+            // 
+            // comboBoxUsers
+            // 
+            this.comboBoxUsers.FormattingEnabled = true;
+            this.comboBoxUsers.Location = new System.Drawing.Point(324, 712);
+            this.comboBoxUsers.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxUsers.Name = "comboBoxUsers";
+            this.comboBoxUsers.Size = new System.Drawing.Size(315, 32);
+            this.comboBoxUsers.TabIndex = 54;
+            this.comboBoxUsers.SelectedIndexChanged += new System.EventHandler(this.comboBoxUsers_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(56, 714);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(218, 25);
+            this.label2.TabIndex = 53;
+            this.label2.Text = "Transfer The Ticket To:";
             // 
             // TransferTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 851);
+            this.ClientSize = new System.Drawing.Size(857, 910);
+            this.Controls.Add(this.comboBoxUsers);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.groupBoxSelected);
             this.Controls.Add(this.bttnTransferTicket);
-            this.Controls.Add(this.lblEmailUserEmp);
-            this.Controls.Add(this.lblDeadlineEmpty);
-            this.Controls.Add(this.lblPriorityEmpty);
-            this.Controls.Add(this.lblReportedByUserEmpty);
-            this.Controls.Add(this.lblIncidentTypeEmpty);
-            this.Controls.Add(this.lblSubjIncidentEmpty);
-            this.Controls.Add(this.lblDateTimeReportedEmpty);
-            this.Controls.Add(this.lblDescriptionEmpty);
-            this.Controls.Add(this.lblEmailUser);
-            this.Controls.Add(this.lblDeadlineFollowup);
-            this.Controls.Add(this.lblPriority);
-            this.Controls.Add(this.lblReportedbyUser);
-            this.Controls.Add(this.lblTypeIcident);
-            this.Controls.Add(this.lblSubjectIcident);
-            this.Controls.Add(this.lblDateTimeReported);
-            this.Controls.Add(this.lblDescript);
             this.Controls.Add(this.lblTransferTicket);
             this.Controls.Add(this.bttnUserManagement);
             this.Controls.Add(this.bttnIncidentManagement);
@@ -319,6 +335,8 @@ namespace GardenGroupUI
             this.Controls.Add(this.lblNoDesk);
             this.Name = "TransferTicket";
             this.Text = "TransferTicket";
+            this.groupBoxSelected.ResumeLayout(false);
+            this.groupBoxSelected.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,7 +350,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.Label lblLicenseInfo;
         private System.Windows.Forms.Label lblNoDesk;
         private System.Windows.Forms.Label lblTransferTicket;
-        private System.Windows.Forms.Label lblEmailUser;
         private System.Windows.Forms.Label lblDeadlineFollowup;
         private System.Windows.Forms.Label lblPriority;
         private System.Windows.Forms.Label lblReportedbyUser;
@@ -340,7 +357,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.Label lblSubjectIcident;
         private System.Windows.Forms.Label lblDateTimeReported;
         private System.Windows.Forms.Label lblDescript;
-        private System.Windows.Forms.Label lblEmailUserEmp;
         private System.Windows.Forms.Label lblDeadlineEmpty;
         private System.Windows.Forms.Label lblPriorityEmpty;
         private System.Windows.Forms.Label lblReportedByUserEmpty;
@@ -349,5 +365,8 @@ namespace GardenGroupUI
         private System.Windows.Forms.Label lblDateTimeReportedEmpty;
         private System.Windows.Forms.Label lblDescriptionEmpty;
         private System.Windows.Forms.Button bttnTransferTicket;
+        private System.Windows.Forms.GroupBox groupBoxSelected;
+        private System.Windows.Forms.ComboBox comboBoxUsers;
+        private System.Windows.Forms.Label label2;
     }
 }

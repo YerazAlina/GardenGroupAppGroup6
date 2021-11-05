@@ -83,21 +83,21 @@ namespace GardenGroupUI
         {
             Dashboard dashboard = new Dashboard();
             dashboard.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void bttnIncidentManagement_Click(object sender, EventArgs e)
         {
             CreateTickets createTickets = new CreateTickets();
             createTickets.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void bttnUserManagement_Click(object sender, EventArgs e)
         {
             UserMangement userMangement = new UserMangement();
             userMangement.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void comboBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
@@ -105,6 +105,7 @@ namespace GardenGroupUI
             string selectedValue = comboBoxUsers.SelectedItem.ToString();
             foreach (User usr in users)
             {
+                //get user by email
                 if (usr.FirstName == selectedValue)
                 {
                     lblEmailUserEmpty.Text = usr.Email;

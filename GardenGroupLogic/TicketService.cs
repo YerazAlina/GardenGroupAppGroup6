@@ -33,5 +33,10 @@ namespace GardenGroupLogic
         {
             ticketDAO.UpdateTicket(ticket);
         }
+
+        public Ticket GetTicketById(ObjectId ticket) 
+        {
+            return ticketDAO.GetTicketById(ticket);
+        }
     }
 }

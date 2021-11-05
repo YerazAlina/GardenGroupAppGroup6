@@ -17,6 +17,7 @@ namespace GardenGroupUI
         private List<Ticket> tickets;
         private ListViewColumnSorter lvwColumnSorter;
         List<ListViewItem> masterlist;
+        private Ticket selectedTicket;
 
         public TicketOverview()
         {
@@ -43,10 +44,10 @@ namespace GardenGroupUI
                 li.Tag = ticket;
 
                 lvTickets.Items.Add(li);
-                
+
             }
             masterlist.Clear();
-            
+
         }
 
         private void btnArchive_Click(object sender, EventArgs e)
@@ -181,7 +182,7 @@ namespace GardenGroupUI
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
 
 
             if (textBox1.Text == "")
@@ -205,7 +206,21 @@ namespace GardenGroupUI
 
         private void lvTickets_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (lvTickets.SelectedItems.Count > 0)
+            {
+                //ListViewItem li = lvTickets.SelectedItems[0];
 
+                ObjectId ticketId = new ObjectId(lvTickets.SelectedItems[0].Text);
+                selectedTicket = ticketService.GetTicketById(ticketId);
+            }
+        }
+
+        private void bttnTransfer_Click(object sender, EventArgs e)
+        {
+            //open new form
+            TransferTicket transferTicketForm = new TransferTicket(selectedTicket);
+            this.Hide();
+            transferTicketForm.Show();
         }
     }
 }

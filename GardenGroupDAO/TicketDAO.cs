@@ -33,5 +33,10 @@ namespace GardenGroupDAL
         {
             db.RemoveTicket(ticket);
         }
+
+        public Ticket GetTicketById(ObjectId ticket)
+        {
+            return db.GetTicketById(ticket);
+        }
     }
 }

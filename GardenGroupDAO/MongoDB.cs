@@ -96,6 +96,15 @@ namespace GardenGroupDAO
             collection.DeleteOne(deletetickets);
         }
 
+        public Ticket GetTicketById(ObjectId ticketId) 
+        {
+            var filter = Builders<Ticket>.Filter.Eq("TicketId", ticketId);
+            List<Ticket> tickets = FindByQuery<Ticket>("tickets", filter);
+
+            return tickets.Count > 0 ? tickets[0] : null;
+        }
+
+
         public List<Ticket> ReadAllArchivedTickets()
         {
             IMongoCollection<Ticket> archivedticketCollection = db.GetCollection<Ticket>("archivedTickets");
