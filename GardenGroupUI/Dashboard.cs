@@ -12,10 +12,29 @@ namespace GardenGroupUI
 {
     public partial class Dashboard : Form
     {
+        private List<Ticket> tickets;
+        private TicketService ticketService;
+
         public Dashboard()
         {
             InitializeComponent();
-            
+
+            ticketService = new TicketService();
+            tickets = ticketService.GetTicketCollection();
+     
+            int countOpenTicket = 0;
+            foreach (Ticket ticket in tickets)
+            {
+                if (ticket.TicketStatus == TicketStatus.Open)
+                {
+                    countOpenTicket++;
+                }
+            }
+
+            //total nr of incidents
+            chartUnresolvedIncidents.Series["s1"].Points.AddXY(1, (tickets.Count - countOpenTicket));
+            //unresolved nr of incidents
+            chartUnresolvedIncidents.Series["s1"].Points.AddXY(2, countOpenTicket);
         }
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
