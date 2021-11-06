@@ -21,32 +21,25 @@ namespace GardenGroupUI
             UserCollection();
         }
 
-        private void btnFilterEmail_Click(object sender, EventArgs e)
-        {
-            string email = txtEmail.Text;
-            if (email != "")
-            {
-                User user = userService.GetEmail(email);
-                if (user != null)
-                {
-                    lvUserManagement.Items.Clear();
-                    ListViewItem li = new ListViewItem(user.Id.ToString());
-                    li.SubItems.Add(user.Email);
-                    li.SubItems.Add(user.FirstName);
-                    li.SubItems.Add(user.LastName);
-                    lvUserManagement.Items.Add(li);
-                }
-                else
-                {
-                    MessageBox.Show("Fill in the full email correctly");
-                }
-            }
-            else if (email == "")
-            {
-                MessageBox.Show("Textfield was empty");
-            }
 
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (txtEmail.Text == "")
+            {
+                UserCollection();
+            }
+            else
+            {
+                foreach (ListViewItem item in lvUserManagement.Items)
+                {
+                    if (!item.SubItems[1].ToString().ToLower().Contains(txtEmail.Text.ToLower()))
+                    {
+                        lvUserManagement.Items.Remove(item);
+                    }
+                }
+            }
         }
+
         private void UserCollection()
         {
             lvUserManagement.Items.Clear();
@@ -64,7 +57,7 @@ namespace GardenGroupUI
 
                 foreach (Ticket t in tickets)
                 {
-                    if (t.ReportedByUser == u.FirstName)
+                    if (t.EmailUser == u.Email)
                     {
                         NumberOfTickets++;
                     }
@@ -77,10 +70,17 @@ namespace GardenGroupUI
 
         private void btnRemoveUser_Click(object sender, EventArgs e)
         {
-            User user = (User)lvUserManagement.SelectedItems[0].Tag;
-            ObjectId userid = user.Id;
-            userService.RemoveUser(userid);
-            UserCollection();
+            try
+            {
+                User user = (User)lvUserManagement.SelectedItems[0].Tag;
+                ObjectId userid = user.Id;
+                userService.RemoveUser(userid);
+                UserCollection();
+            }
+            catch (Exception a)
+            {
+                MessageBox.Show("User needs to be selected.");
+            }
         }
 
         private void Refresh_Click(object sender, EventArgs e)
@@ -98,9 +98,17 @@ namespace GardenGroupUI
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            AddUsers Update = new AddUsers((User)lvUserManagement.SelectedItems[0].Tag, false);
-            Update.Show();
-            this.Hide();
+            try
+            {
+                AddUsers Update = new AddUsers((User)lvUserManagement.SelectedItems[0].Tag, false);
+                Update.Show();
+                this.Hide();
+            }
+            catch (Exception a)
+            {
+                MessageBox.Show("User needs to be selected.");
+            }
+          
         }
 
         private void bttnDashboard_Click(object sender, EventArgs e)
@@ -124,4 +132,4 @@ namespace GardenGroupUI
             this.Hide();
         }
     }
-}
+  }
