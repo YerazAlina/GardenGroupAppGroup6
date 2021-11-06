@@ -102,5 +102,26 @@ namespace GardenGroupUI
             Update.Show();
             this.Hide();
         }
+
+        private void bttnDashboard_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
+            this.Hide();
+        }
+
+        private void bttnIncidentManagement_Click(object sender, EventArgs e)
+        {
+            CreateTickets createTickets = new CreateTickets();
+            createTickets.Show();
+            this.Hide();
+        }
+
+        private void bttnUserManagement_Click(object sender, EventArgs e)
+        {
+            UserMangement userMangement = new UserMangement();
+            userMangement.Show();
+            this.Hide();
+        }
     }
 }

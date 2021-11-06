@@ -19,21 +19,21 @@ namespace GardenGroupUI
         {
             Dashboard dashboard = new Dashboard();
             dashboard.Show();
-            Hide();
+            this.Hide();
         }
 
         private void bttnIncidentManagement_Click(object sender, EventArgs e)
         {
-            CreateTickets formNewIncident = new CreateTickets();
-            formNewIncident.Show();
-            Hide();
+            CreateTickets createTickets = new CreateTickets();
+            createTickets.Show();
+            this.Hide();
         }
 
         private void bttnUserManagement_Click(object sender, EventArgs e)
         {
             UserMangement userMangement = new UserMangement();
             userMangement.Show();
-            Hide();
+            this.Hide();
         }
     }
 }

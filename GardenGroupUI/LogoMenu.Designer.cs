@@ -293,7 +293,7 @@ namespace GardenGroupUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 700);
+            this.ClientSize = new System.Drawing.Size(768, 507);
             this.Controls.Add(this.bttnUserManagement);
             this.Controls.Add(this.bttnIncidentManagement);
             this.Controls.Add(this.bttnDashboard);
