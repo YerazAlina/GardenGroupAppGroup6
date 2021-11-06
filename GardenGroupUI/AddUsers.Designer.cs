@@ -54,6 +54,8 @@ namespace GardenGroupUI
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.lblLicenseInfo = new System.Windows.Forms.Label();
+            this.lblNoDesk = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -165,7 +167,7 @@ namespace GardenGroupUI
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(135, 347);
+            this.btnAdd.Location = new System.Drawing.Point(204, 347);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(119, 31);
             this.btnAdd.TabIndex = 14;
@@ -175,7 +177,7 @@ namespace GardenGroupUI
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(395, 347);
+            this.btnReturn.Location = new System.Drawing.Point(338, 347);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(119, 31);
             this.btnReturn.TabIndex = 15;
@@ -255,7 +257,7 @@ namespace GardenGroupUI
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(260, 347);
+            this.btnUpdate.Location = new System.Drawing.Point(204, 347);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(119, 31);
             this.btnUpdate.TabIndex = 19;
@@ -263,12 +265,35 @@ namespace GardenGroupUI
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // lblLicenseInfo
+            // 
+            this.lblLicenseInfo.AutoSize = true;
+            this.lblLicenseInfo.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold);
+            this.lblLicenseInfo.Location = new System.Drawing.Point(460, 51);
+            this.lblLicenseInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLicenseInfo.Name = "lblLicenseInfo";
+            this.lblLicenseInfo.Size = new System.Drawing.Size(215, 19);
+            this.lblLicenseInfo.TabIndex = 21;
+            this.lblLicenseInfo.Text = "Licensed to: The Garden Group";
+            // 
+            // lblNoDesk
+            // 
+            this.lblNoDesk.AutoSize = true;
+            this.lblNoDesk.Font = new System.Drawing.Font("Segoe UI", 26.14286F, System.Drawing.FontStyle.Bold);
+            this.lblNoDesk.Location = new System.Drawing.Point(522, 4);
+            this.lblNoDesk.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNoDesk.Name = "lblNoDesk";
+            this.lblNoDesk.Size = new System.Drawing.Size(149, 47);
+            this.lblNoDesk.TabIndex = 20;
+            this.lblNoDesk.Text = "NoDesk";
+            // 
             // AddUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 390);
-            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.lblLicenseInfo);
+            this.Controls.Add(this.lblNoDesk);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblCheck);
             this.Controls.Add(this.btnReturn);
@@ -286,6 +311,7 @@ namespace GardenGroupUI
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnUpdate);
             this.Name = "AddUsers";
             this.Text = "Add User";
             this.ResumeLayout(false);
@@ -320,5 +346,7 @@ namespace GardenGroupUI
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Label lblLicenseInfo;
+        private System.Windows.Forms.Label lblNoDesk;
     }
 }

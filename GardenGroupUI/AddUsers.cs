@@ -25,13 +25,18 @@ namespace GardenGroupUI
             CmbBranch.DataSource = (Enum.GetValues(typeof(Branch)));
             CmbTypeOfUser.SelectedIndex = -1;
             CmbBranch.SelectedIndex = -1;
-
+          
             if (!CheckAddORUpdate)
             {
                 Update();
-             
+
             }
-        
+            else
+            {
+                btnUpdate.Hide();
+            }
+            
+
         }
         public void Update()
         {
