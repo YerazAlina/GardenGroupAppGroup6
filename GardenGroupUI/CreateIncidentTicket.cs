@@ -21,6 +21,8 @@ namespace GardenGroupUI
             newTicket = ticket;
             //add all users to the combo box
             UserService userService = new UserService();
+            comboBoxIncidentType.SelectedIndex = -1;
+            comboBoxPriority.SelectedIndex = -1;
             users = userService.GetUserCollection();
             if (!addOrUpdate)
             {
@@ -35,8 +37,7 @@ namespace GardenGroupUI
             //putting all enums in the combo box
             comboBoxIncidentType.DataSource = (Enum.GetValues(typeof(IncidentType)));
             comboBoxPriority.DataSource = (Enum.GetValues(typeof(Priority)));
-            comboBoxIncidentType.SelectedIndex = -1;
-            comboBoxPriority.SelectedIndex = -1;
+            
         }
         public void Update()
         {
@@ -46,7 +47,7 @@ namespace GardenGroupUI
             textBoxSubjType.Text = newTicket.IncidentSubject;
             comboBoxIncidentType.Text = newTicket.TypeOfIncident.ToString();
             comboBoxUsers.Text = newTicket.ReportedByUser;
-            lblEmailUser.Text = newTicket.EmailUser;
+            lblEmailUserEmpty.Text = newTicket.EmailUser;
             comboBoxPriority.Text = newTicket.TicketPriority.ToString();
             dateTimePicker2.Text = newTicket.TicketDeadline.ToString();
             textBoxDescription.Text = newTicket.TicketDescription;
@@ -143,6 +144,10 @@ namespace GardenGroupUI
             newTicket.EmailUser = lblEmailUserEmpty.Text;
             TicketService ticketService = new TicketService();
             ticketService.UpdateTicket(newTicket);
+            TicketOverview ticketOverview = new TicketOverview();
+            this.Hide();
+            ticketOverview.Show();
+            
         }
     }
 }
