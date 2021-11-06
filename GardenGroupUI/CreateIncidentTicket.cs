@@ -31,8 +31,10 @@ namespace GardenGroupUI
             //putting all enums in the combo box
             comboBoxIncidentType.DataSource = (Enum.GetValues(typeof(IncidentType)));
             comboBoxPriority.DataSource = (Enum.GetValues(typeof(Priority)));
+            CmbStatus.DataSource = (Enum.GetValues(typeof(TicketStatus)));
             comboBoxIncidentType.SelectedIndex = -1;
             comboBoxPriority.SelectedIndex = -1;
+            CmbStatus.SelectedIndex = -1;
         }
 
         private void bttnSubmitTicket_Click(object sender, EventArgs e)
@@ -49,10 +51,10 @@ namespace GardenGroupUI
             newTicket.ReportedByUser = comboBoxUsers.SelectedItem.ToString(); 
 
             newTicket.TicketPriority = (Priority)comboBoxPriority.SelectedItem;
-            newTicket.TicketDeadline = comboBoxDeadline.SelectedItem.ToString();
+            newTicket.TicketDeadline = dateTimePicker2.Value;
             newTicket.TicketDescription = textBoxDescription.Text;
-
             newTicket.EmailUser = lblEmailUserEmpty.Text;
+            newTicket.TicketStatus = (TicketStatus)CmbStatus.SelectedItem;
 
             //send ticket to database
             ticketService.AddTicket(newTicket);
@@ -74,7 +76,6 @@ namespace GardenGroupUI
             comboBoxIncidentType.SelectedIndex = -1;
             //comboBoxUsers
             comboBoxPriority.SelectedIndex = -1;
-            comboBoxDeadline.SelectedIndex = -1;
             lblEmailUserEmpty.Text = "";
             textBoxDescription.Clear();
         }

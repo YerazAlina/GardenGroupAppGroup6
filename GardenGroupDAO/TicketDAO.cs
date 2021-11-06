@@ -38,5 +38,15 @@ namespace GardenGroupDAL
         {
             return db.GetTicketById(ticket);
         }
+
+        public List<Ticket> UnsolvedTicket()
+        {
+            return db.UnsolvedTicket();
+        }
+
+        public List<Ticket> PastDeadline()
+        {
+            return db.PastDeadline();
+        }
     }
 }

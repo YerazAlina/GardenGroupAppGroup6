@@ -24,14 +24,17 @@ namespace GardenGroupModel
         [BsonElement("EmailUser")]
         public string EmailUser { get; set; }
 
+        [BsonElement("TicketPriority")]
+
         [BsonRepresentation(BsonType.String)]
         public Priority TicketPriority { get; set; }
-        
+        [BsonElement("TicketStatus")]
+
         [BsonRepresentation(BsonType.String)]
         public TicketStatus TicketStatus { get; set; }
 
         [BsonElement("TicketDeadline")]
-        public string TicketDeadline { get; set; }
+        public DateTime TicketDeadline { get; set; }
 
         [BsonElement("TicketDescription")]
         public string TicketDescription { get; set; }

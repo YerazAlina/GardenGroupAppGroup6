@@ -132,5 +132,18 @@ namespace GardenGroupDAO
             var filter = Builders<Ticket>.Filter.Eq("_id", ticket.TicketId);
             collection.ReplaceOne(filter, ticket, new ReplaceOptions() { IsUpsert = true });
         }
+
+        public List<Ticket> UnsolvedTicket()
+        {
+            var collection = db.GetCollection<Ticket>("tickets");
+            return collection.Find<Ticket>(Ticket => Ticket.TicketStatus != TicketStatus.Closed).ToList<Ticket>();
+        }
+
+        public List<Ticket> PastDeadline()
+        {
+            var collection = db.GetCollection<Ticket>("tickets");
+            return collection.Find<Ticket>(Ticket => Ticket.TicketDeadline < DateTime.Now).ToList<Ticket>();
+
+        }
     }
 }

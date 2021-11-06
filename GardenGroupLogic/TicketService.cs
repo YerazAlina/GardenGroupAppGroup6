@@ -38,5 +38,15 @@ namespace GardenGroupLogic
         {
             return ticketDAO.GetTicketById(ticket);
         }
+
+        public List<Ticket> UnsolvedTicket()
+        {
+            return ticketDAO.UnsolvedTicket();
+        }
+
+        public List<Ticket> PastDeadline()
+        {
+            return ticketDAO.PastDeadline();
+        }
     }
 }

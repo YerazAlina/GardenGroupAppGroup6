@@ -12,85 +12,54 @@ namespace GardenGroupUI
 {
     public partial class Dashboard : Form
     {
-        private List<Ticket> tickets;
+        private int solvedtickets;
+        private int RemainingTickets;
         private TicketService ticketService;
-
+        private List<Ticket> unsolvedTickets;
+        private List<Ticket> deadLine;
         public Dashboard()
         {
             InitializeComponent();
 
             ticketService = new TicketService();
-            tickets = ticketService.GetTicketCollection();
-     
-            int countOpenTicket = 0;
-            foreach (Ticket ticket in tickets)
-            {
-                if (ticket.TicketStatus == TicketStatus.Open)
-                {
-                    countOpenTicket++;
-                }
-            }
+
+            unsolvedTickets = ticketService.UnsolvedTicket();
+
+            solvedtickets = ticketService.ReadAllTickets().Count - unsolvedTickets.Count;
+            deadLine = ticketService.PastDeadline();
+            RemainingTickets = ticketService.ReadAllTickets().Count - deadLine.Count;
 
             //total nr of incidents
-            chartUnresolvedIncidents.Series["s1"].Points.AddXY(1, (tickets.Count - countOpenTicket));
+            chartUnresolvedIncidents.Series["Unsolved incidents"].Points.AddXY("Solved Ticket", solvedtickets);
             //unresolved nr of incidents
-            chartUnresolvedIncidents.Series["s1"].Points.AddXY(2, countOpenTicket);
-        }
+            chartUnresolvedIncidents.Series["Unsolved incidents"].Points.AddXY("Unsolved Ticket", unsolvedTickets.Count);
 
-        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
-        {
+            //tickets over deadline
+            PastDeadlineChart.Series["Deadline"].Points.AddXY("Past deadline", deadLine.Count);
 
-        }
-
-        private void lvTickets_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            TicketOverview ticketOverview = new TicketOverview();
-            ticketOverview.ShowDialog();
-        }
-
-        private void bttnDashboard_Click(object sender, EventArgs e)
-        {
-
+            //tickets not over deadline
+            PastDeadlineChart.Series["Deadline"].Points.AddXY("Remaining", RemainingTickets);
         }
 
         private void bttnIncidentManagement_Click(object sender, EventArgs e)
         {
-            this.Close();
             TicketOverview ticketOverview = new TicketOverview();
             ticketOverview.ShowDialog();
+            this.Hide();
         }
 
         private void bttnUserManagement_Click(object sender, EventArgs e)
         {
             UserMangement userMangement = new UserMangement();
             userMangement.ShowDialog();
-            this.Close();
+            this.Hide();
+        }
+
+        private void bttnShowLists_Click(object sender, EventArgs e)
+        {
+            TicketOverview ticketOverview = new TicketOverview();
+            ticketOverview.ShowDialog();
+            this.Hide();
         }
     }
 }
