@@ -28,6 +28,8 @@ namespace GardenGroupUI
             TicketCollection();
             lvwColumnSorter = new ListViewColumnSorter();
             this.lvTickets.ListViewItemSorter = lvwColumnSorter;
+
+            comboBoxCommonKeyWords.DataSource = Enum.GetValues(typeof(CommonKeywords));
         }
 
         public void TicketCollection()
@@ -236,6 +238,23 @@ namespace GardenGroupUI
             ObjectId ticketId = ticket.TicketId;
             ticketService.RemoveTicket(ticketId);
             TicketCollection();
+        }
+
+        private void comboBoxKeywords_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string searchValue = comboBoxCommonKeyWords.SelectedItem.ToString().ToLower();
+            TicketCollection();
+
+            foreach (ListViewItem ticket in lvTickets.Items)
+            {
+
+                if (!ticket.SubItems[4].ToString().ToLower().Contains(searchValue) && !ticket.SubItems[1].ToString().ToLower().Contains(searchValue))
+                {
+                    lvTickets.Items.Remove(ticket);
+                }
+
+            }
+
         }
     }
 }

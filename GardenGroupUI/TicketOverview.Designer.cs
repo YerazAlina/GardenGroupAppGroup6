@@ -34,7 +34,6 @@ namespace GardenGroupUI
             this.btnArchiveWindow = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TicketSubject = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TicketName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -44,6 +43,9 @@ namespace GardenGroupUI
             this.bttnTransfer = new System.Windows.Forms.Button();
             this.btnUpdateTicket = new System.Windows.Forms.Button();
             this.btnRemoveTicket = new System.Windows.Forms.Button();
+            this.comboBoxCommonKeyWords = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnArchive
@@ -93,15 +95,6 @@ namespace GardenGroupUI
             this.textBox1.TabIndex = 12;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(65, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 13);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Filter By Subject:";
-            // 
             // ID
             // 
             this.ID.Text = "ID";
@@ -148,7 +141,7 @@ namespace GardenGroupUI
             // bttnTransfer
             // 
             this.bttnTransfer.Location = new System.Drawing.Point(179, 336);
-            this.bttnTransfer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bttnTransfer.Margin = new System.Windows.Forms.Padding(2);
             this.bttnTransfer.Name = "bttnTransfer";
             this.bttnTransfer.Size = new System.Drawing.Size(162, 45);
             this.bttnTransfer.TabIndex = 14;
@@ -178,11 +171,40 @@ namespace GardenGroupUI
             this.btnRemoveTicket.UseVisualStyleBackColor = true;
             this.btnRemoveTicket.Click += new System.EventHandler(this.btnRemoveTicket_Click);
             // 
+            // comboBoxCommonKeyWords
+            // 
+            this.comboBoxCommonKeyWords.FormattingEnabled = true;
+            this.comboBoxCommonKeyWords.Location = new System.Drawing.Point(290, 63);
+            this.comboBoxCommonKeyWords.Name = "comboBoxCommonKeyWords";
+            this.comboBoxCommonKeyWords.Size = new System.Drawing.Size(164, 21);
+            this.comboBoxCommonKeyWords.TabIndex = 18;
+            this.comboBoxCommonKeyWords.SelectedIndexChanged += new System.EventHandler(this.comboBoxKeywords_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(65, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Filter By Subject:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(287, 46);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Filter By Keyword:";
+            // 
             // TicketOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 390);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.comboBoxCommonKeyWords);
             this.Controls.Add(this.btnRemoveTicket);
             this.Controls.Add(this.btnUpdateTicket);
             this.Controls.Add(this.bttnTransfer);
@@ -209,7 +231,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.Button btnArchiveWindow;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ColumnHeader ID;
         private System.Windows.Forms.ColumnHeader TicketSubject;
         private System.Windows.Forms.ColumnHeader TicketName;
@@ -219,5 +240,8 @@ namespace GardenGroupUI
         private System.Windows.Forms.Button bttnTransfer;
         private System.Windows.Forms.Button btnUpdateTicket;
         private System.Windows.Forms.Button btnRemoveTicket;
+        private System.Windows.Forms.ComboBox comboBoxCommonKeyWords;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
