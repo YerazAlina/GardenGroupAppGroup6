@@ -19,26 +19,33 @@ namespace GardenGroupUI
         {
             InitializeComponent();
             newTicket = ticket;
+            
             //add all users to the combo box
             UserService userService = new UserService();
+            users = userService.GetUserCollection();
+
+            //putting all enums in the combo box
+            comboBoxIncidentType.DataSource = (Enum.GetValues(typeof(IncidentType)));
+            comboBoxPriority.DataSource = (Enum.GetValues(typeof(Priority)));
             comboBoxIncidentType.SelectedIndex = -1;
             comboBoxPriority.SelectedIndex = -1;
-            users = userService.GetUserCollection();
-            if (!addOrUpdate)
-            {
-                Update();
 
-            }
             foreach (User usr in users)
             {
                 comboBoxUsers.Items.Add(usr.FirstName);
             }
 
-            //putting all enums in the combo box
-            comboBoxIncidentType.DataSource = (Enum.GetValues(typeof(IncidentType)));
-            comboBoxPriority.DataSource = (Enum.GetValues(typeof(Priority)));
-            
+            if (!addOrUpdate)
+            {
+                Update();
+
+            }
+            else 
+            {
+                btnUpdate.Hide();
+            }
         }
+
         public void Update()
         {
             bttnSubmitTicket.Hide();
@@ -51,6 +58,7 @@ namespace GardenGroupUI
             comboBoxPriority.Text = newTicket.TicketPriority.ToString();
             dateTimePicker2.Text = newTicket.TicketDeadline.ToString();
             textBoxDescription.Text = newTicket.TicketDescription;
+
         }
 
         private void bttnSubmitTicket_Click(object sender, EventArgs e)
@@ -102,8 +110,8 @@ namespace GardenGroupUI
 
         private void bttnIncidentManagement_Click(object sender, EventArgs e)
         {
-            CreateTickets createTickets = new CreateTickets(null, true);
-            createTickets.ShowDialog();
+            TicketOverview ticketOverview = new TicketOverview();
+            ticketOverview.Show();
             this.Hide();
         }
 
@@ -119,7 +127,6 @@ namespace GardenGroupUI
             string name = comboBoxUsers.SelectedItem.ToString();
             foreach (User usr in users)
             {
-                //get user by email
                 if (usr.FirstName == name)
                 {
                     lblEmailUserEmpty.Text = usr.Email;
