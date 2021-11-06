@@ -67,9 +67,9 @@ namespace GardenGroupUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
             CreateTickets formNewIncident = new CreateTickets();
-            formNewIncident.ShowDialog();
+            formNewIncident.Show();
+            this.Hide();
         }
 
         private void lvTickets_ColumnClick(object sender, ColumnClickEventArgs e)
