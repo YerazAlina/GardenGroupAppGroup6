@@ -68,7 +68,7 @@ namespace GardenGroupUI
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            CreateTickets formNewIncident = new CreateTickets();
+            CreateTickets formNewIncident = new CreateTickets(null, true);
             formNewIncident.ShowDialog();
         }
 
@@ -222,5 +222,21 @@ namespace GardenGroupUI
             this.Hide();
             transferTicketForm.Show();
         }
+
+        private void btnUpdateTicket_Click(object sender, EventArgs e)
+        {
+            CreateTickets updateTicket = new CreateTickets((Ticket)lvTickets.SelectedItems[0].Tag, false);
+            updateTicket.ShowDialog();
+            this.Hide();
+        }
+
+        private void btnRemoveTicket_Click(object sender, EventArgs e)
+        {
+            Ticket ticket = (Ticket)lvTickets.SelectedItems[0].Tag;
+            ObjectId ticketId = ticket.TicketId;
+            ticketService.RemoveTicket(ticketId);
+            TicketCollection();
+        }
     }
 }
+

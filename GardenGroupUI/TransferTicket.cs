@@ -55,7 +55,7 @@ namespace GardenGroupUI
 
         private void bttnIncidentManagement_Click(object sender, EventArgs e)
         {
-            CreateTickets createTickets = new CreateTickets();
+            CreateTickets createTickets = new CreateTickets(null,true);
             createTickets.ShowDialog();
             this.Hide();
         }

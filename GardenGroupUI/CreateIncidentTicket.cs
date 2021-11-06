@@ -15,14 +15,18 @@ namespace GardenGroupUI
         private Ticket newTicket;
         private List<User> users;
 
-        public CreateTickets()
+        public CreateTickets(Ticket ticket, bool addOrUpdate)
         {
             InitializeComponent();
-
+            newTicket = ticket;
             //add all users to the combo box
             UserService userService = new UserService();
             users = userService.GetUserCollection();
+            if (!addOrUpdate)
+            {
+                Update();
 
+            }
             foreach (User usr in users)
             {
                 comboBoxUsers.Items.Add(usr.FirstName);
@@ -36,11 +40,24 @@ namespace GardenGroupUI
             comboBoxPriority.SelectedIndex = -1;
             CmbStatus.SelectedIndex = -1;
         }
+        public void Update()
+        {
+            bttnSubmitTicket.Hide();
+            lblTitleCreateIcident.Text = "Update incident ticket";
+            dateTimePicker.Text = newTicket.TicketDate.ToString();
+            textBoxSubjType.Text = newTicket.IncidentSubject;
+            comboBoxIncidentType.Text = newTicket.TypeOfIncident.ToString();
+            comboBoxUsers.Text = newTicket.ReportedByUser;
+            lblEmailUser.Text = newTicket.EmailUser;
+            comboBoxPriority.Text = newTicket.TicketPriority.ToString();
+            dateTimePicker2.Text = newTicket.TicketDeadline.ToString();
+            textBoxDescription.Text = newTicket.TicketDescription;
+        }
 
         private void bttnSubmitTicket_Click(object sender, EventArgs e)
         {
             TicketService ticketService = new TicketService();
-            newTicket = new Ticket();
+            
 
             //ticket status for new ticket
             newTicket.TicketStatus = TicketStatus.Open;
@@ -89,7 +106,7 @@ namespace GardenGroupUI
 
         private void bttnIncidentManagement_Click(object sender, EventArgs e)
         {
-            CreateTickets createTickets = new CreateTickets();
+            CreateTickets createTickets = new CreateTickets(null, true);
             createTickets.ShowDialog();
             this.Hide();
         }
@@ -112,6 +129,22 @@ namespace GardenGroupUI
                     lblEmailUserEmpty.Text = usr.Email;
                 }
             }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            newTicket.TicketDate = dateTimePicker.Value;
+            newTicket.IncidentSubject = textBoxSubjType.Text;
+            newTicket.TypeOfIncident = (IncidentType)comboBoxIncidentType.SelectedItem;
+            newTicket.ReportedByUser = comboBoxUsers.SelectedItem.ToString();
+
+            newTicket.TicketPriority = (Priority)comboBoxPriority.SelectedItem;
+            newTicket.TicketDeadline = dateTimePicker2.Value;
+            newTicket.TicketDescription = textBoxDescription.Text;
+
+            newTicket.EmailUser = lblEmailUserEmpty.Text;
+            TicketService ticketService = new TicketService();
+            ticketService.UpdateTicket(newTicket);
         }
     }
 }

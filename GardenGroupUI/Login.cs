@@ -69,7 +69,7 @@ namespace GardenGroupUI
                 }
                 else if(user.TypeOfUser == TypeOfUser.ServiceDesk)
                 {
-                    CreateTickets newIncident = new CreateTickets();
+                    CreateTickets newIncident = new CreateTickets(null, true);
                     newIncident.Show();
                     this.Hide();
                 }

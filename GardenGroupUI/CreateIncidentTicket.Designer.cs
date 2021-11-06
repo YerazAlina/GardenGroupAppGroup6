@@ -54,6 +54,7 @@ namespace GardenGroupUI
             this.lblEmailUserEmpty = new System.Windows.Forms.Label();
             this.CmbStatus = new System.Windows.Forms.ComboBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblLicenseInfo
@@ -163,7 +164,7 @@ namespace GardenGroupUI
             // textBoxSubjType
             // 
             this.textBoxSubjType.Location = new System.Drawing.Point(165, 166);
-            this.textBoxSubjType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxSubjType.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSubjType.Name = "textBoxSubjType";
             this.textBoxSubjType.Size = new System.Drawing.Size(190, 20);
             this.textBoxSubjType.TabIndex = 14;
@@ -172,7 +173,7 @@ namespace GardenGroupUI
             // 
             this.comboBoxIncidentType.FormattingEnabled = true;
             this.comboBoxIncidentType.Location = new System.Drawing.Point(165, 196);
-            this.comboBoxIncidentType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxIncidentType.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxIncidentType.Name = "comboBoxIncidentType";
             this.comboBoxIncidentType.Size = new System.Drawing.Size(190, 21);
             this.comboBoxIncidentType.TabIndex = 15;
@@ -181,7 +182,7 @@ namespace GardenGroupUI
             // 
             this.comboBoxUsers.FormattingEnabled = true;
             this.comboBoxUsers.Location = new System.Drawing.Point(165, 229);
-            this.comboBoxUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxUsers.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxUsers.Name = "comboBoxUsers";
             this.comboBoxUsers.Size = new System.Drawing.Size(190, 21);
             this.comboBoxUsers.TabIndex = 16;
@@ -191,7 +192,7 @@ namespace GardenGroupUI
             // 
             this.comboBoxPriority.FormattingEnabled = true;
             this.comboBoxPriority.Location = new System.Drawing.Point(165, 289);
-            this.comboBoxPriority.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxPriority.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxPriority.Name = "comboBoxPriority";
             this.comboBoxPriority.Size = new System.Drawing.Size(190, 21);
             this.comboBoxPriority.TabIndex = 17;
@@ -199,7 +200,7 @@ namespace GardenGroupUI
             // dateTimePicker
             // 
             this.dateTimePicker.Location = new System.Drawing.Point(165, 137);
-            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(190, 20);
             this.dateTimePicker.TabIndex = 19;
@@ -207,7 +208,7 @@ namespace GardenGroupUI
             // textBoxDescription
             // 
             this.textBoxDescription.Location = new System.Drawing.Point(165, 423);
-            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.Size = new System.Drawing.Size(323, 140);
@@ -217,7 +218,7 @@ namespace GardenGroupUI
             // 
             this.bttnSubmitTicket.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.bttnSubmitTicket.Location = new System.Drawing.Point(273, 581);
-            this.bttnSubmitTicket.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bttnSubmitTicket.Margin = new System.Windows.Forms.Padding(2);
             this.bttnSubmitTicket.Name = "bttnSubmitTicket";
             this.bttnSubmitTicket.Size = new System.Drawing.Size(121, 44);
             this.bttnSubmitTicket.TabIndex = 21;
@@ -229,7 +230,7 @@ namespace GardenGroupUI
             // 
             this.bttnCancel.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.bttnCancel.Location = new System.Drawing.Point(29, 581);
-            this.bttnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bttnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.bttnCancel.Name = "bttnCancel";
             this.bttnCancel.Size = new System.Drawing.Size(121, 44);
             this.bttnCancel.TabIndex = 22;
@@ -241,7 +242,7 @@ namespace GardenGroupUI
             // 
             this.bttnDashboard.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.bttnDashboard.Location = new System.Drawing.Point(6, 68);
-            this.bttnDashboard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bttnDashboard.Margin = new System.Windows.Forms.Padding(2);
             this.bttnDashboard.Name = "bttnDashboard";
             this.bttnDashboard.Size = new System.Drawing.Size(128, 20);
             this.bttnDashboard.TabIndex = 23;
@@ -253,7 +254,7 @@ namespace GardenGroupUI
             // 
             this.bttnIncidentManagement.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.bttnIncidentManagement.Location = new System.Drawing.Point(136, 68);
-            this.bttnIncidentManagement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bttnIncidentManagement.Margin = new System.Windows.Forms.Padding(2);
             this.bttnIncidentManagement.Name = "bttnIncidentManagement";
             this.bttnIncidentManagement.Size = new System.Drawing.Size(128, 20);
             this.bttnIncidentManagement.TabIndex = 24;
@@ -265,7 +266,7 @@ namespace GardenGroupUI
             // 
             this.bttnUserManagement.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.bttnUserManagement.Location = new System.Drawing.Point(267, 68);
-            this.bttnUserManagement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bttnUserManagement.Margin = new System.Windows.Forms.Padding(2);
             this.bttnUserManagement.Name = "bttnUserManagement";
             this.bttnUserManagement.Size = new System.Drawing.Size(109, 20);
             this.bttnUserManagement.TabIndex = 25;
@@ -309,11 +310,24 @@ namespace GardenGroupUI
             this.dateTimePicker2.Size = new System.Drawing.Size(190, 20);
             this.dateTimePicker2.TabIndex = 29;
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnUpdate.Location = new System.Drawing.Point(525, 581);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(121, 44);
+            this.btnUpdate.TabIndex = 30;
+            this.btnUpdate.Text = "Update Ticket";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // CreateTickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(727, 575);
+            this.ClientSize = new System.Drawing.Size(727, 636);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.CmbStatus);
             this.Controls.Add(this.lblEmailUserEmpty);
@@ -339,7 +353,7 @@ namespace GardenGroupUI
             this.Controls.Add(this.lblTitleCreateIcident);
             this.Controls.Add(this.lblLicenseInfo);
             this.Controls.Add(this.lblNoDesk);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CreateTickets";
             this.Text = "New incident ticket";
             this.ResumeLayout(false);
@@ -374,5 +388,6 @@ namespace GardenGroupUI
         private System.Windows.Forms.Label lblEmailUserEmpty;
         private System.Windows.Forms.ComboBox CmbStatus;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
