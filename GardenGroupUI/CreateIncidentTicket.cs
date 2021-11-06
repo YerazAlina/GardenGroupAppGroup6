@@ -56,11 +56,8 @@ namespace GardenGroupUI
         private void bttnSubmitTicket_Click(object sender, EventArgs e)
         {
             TicketService ticketService = new TicketService();
+            newTicket = new Ticket();
             
-
-            //ticket status for new ticket
-            newTicket.TicketStatus = TicketStatus.Open;
-
             newTicket.TicketDate = dateTimePicker.Value;
             newTicket.IncidentSubject = textBoxSubjType.Text;
             newTicket.TypeOfIncident = (IncidentType)comboBoxIncidentType.SelectedItem; 
