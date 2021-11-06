@@ -91,9 +91,7 @@ namespace GardenGroupUI
                 {
                     currentTicket.EmailUser = usr.Email;
                 }
-
             }
-            //email..
         }
     }
 }

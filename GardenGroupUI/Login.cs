@@ -62,25 +62,17 @@ namespace GardenGroupUI
 
                 if(user.TypeOfUser == TypeOfUser.Employee)
                 {
-                    AddUsers addingUsers = new AddUsers(user,true);
-                    addingUsers.Show();
-                    this.Hide();
-
-                }
-                else if(user.TypeOfUser == TypeOfUser.ServiceDesk)
-                {
                     CreateTickets newIncident = new CreateTickets(null, true);
                     newIncident.Show();
                     this.Hide();
                 }
-                else
+                else if(user.TypeOfUser == TypeOfUser.ServiceDesk)
                 {
                     Dashboard dashboard = new Dashboard();
                     dashboard.Show();
                     this.Hide();
                 }
             }
-
         }
 
         private void Login_Load(object sender, EventArgs e)

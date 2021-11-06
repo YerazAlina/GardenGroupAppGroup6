@@ -95,7 +95,6 @@ namespace GardenGroupUI
             //dateTimePicker
             textBoxSubjType.Clear();
             comboBoxIncidentType.SelectedIndex = -1;
-            //comboBoxUsers
             comboBoxPriority.SelectedIndex = -1;
             lblEmailUserEmpty.Text = "";
             textBoxDescription.Clear();

@@ -99,6 +99,7 @@ namespace GardenGroupUI
             this.lvTickets.Sort();
 
         }
+
         private class ListViewColumnSorter : IComparer
         {
 
