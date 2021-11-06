@@ -19,7 +19,7 @@ namespace GardenGroupUI
         {
             Dashboard dashboard = new Dashboard();
             dashboard.Show();
-            Hide();
+            this.Hide();
         }
 
         private void bttnIncidentManagement_Click(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace GardenGroupUI
         {
             UserMangement userMangement = new UserMangement();
             userMangement.Show();
-            Hide();
+            this.Hide();
         }
     }
 }

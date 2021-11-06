@@ -17,6 +17,7 @@ namespace GardenGroupUI
         private TicketService ticketService;
         private List<Ticket> unsolvedTickets;
         private List<Ticket> deadLine;
+
         public Dashboard()
         {
             InitializeComponent();
@@ -44,21 +45,21 @@ namespace GardenGroupUI
         private void bttnIncidentManagement_Click(object sender, EventArgs e)
         {
             TicketOverview ticketOverview = new TicketOverview();
-            ticketOverview.ShowDialog();
+            ticketOverview.Show();
             this.Hide();
         }
 
         private void bttnUserManagement_Click(object sender, EventArgs e)
         {
             UserMangement userMangement = new UserMangement();
-            userMangement.ShowDialog();
+            userMangement.Show();
             this.Hide();
         }
 
         private void bttnShowLists_Click(object sender, EventArgs e)
         {
             TicketOverview ticketOverview = new TicketOverview();
-            ticketOverview.ShowDialog();
+            ticketOverview.Show();
             this.Hide();
         }
     }

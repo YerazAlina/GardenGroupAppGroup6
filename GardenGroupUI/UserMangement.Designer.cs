@@ -45,14 +45,18 @@ namespace GardenGroupUI
             this.lblLicenseInfo = new System.Windows.Forms.Label();
             this.lblNoDesk = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.bttnUserManagement = new System.Windows.Forms.Button();
+            this.bttnIncidentManagement = new System.Windows.Forms.Button();
+            this.bttnDashboard = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAddingUser
             // 
             this.btnAddingUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAddingUser.Location = new System.Drawing.Point(112, 341);
+            this.btnAddingUser.Location = new System.Drawing.Point(195, 725);
+            this.btnAddingUser.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnAddingUser.Name = "btnAddingUser";
-            this.btnAddingUser.Size = new System.Drawing.Size(121, 31);
+            this.btnAddingUser.Size = new System.Drawing.Size(222, 57);
             this.btnAddingUser.TabIndex = 1;
             this.btnAddingUser.Text = "+ ADD NEW USER";
             this.btnAddingUser.UseVisualStyleBackColor = true;
@@ -61,9 +65,10 @@ namespace GardenGroupUI
             // btnRemoveUser
             // 
             this.btnRemoveUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnRemoveUser.Location = new System.Drawing.Point(238, 341);
+            this.btnRemoveUser.Location = new System.Drawing.Point(426, 725);
+            this.btnRemoveUser.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnRemoveUser.Name = "btnRemoveUser";
-            this.btnRemoveUser.Size = new System.Drawing.Size(119, 31);
+            this.btnRemoveUser.Size = new System.Drawing.Size(218, 57);
             this.btnRemoveUser.TabIndex = 2;
             this.btnRemoveUser.Text = "- REMOVE USER";
             this.btnRemoveUser.UseVisualStyleBackColor = true;
@@ -72,16 +77,18 @@ namespace GardenGroupUI
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(74, 59);
+            this.txtEmail.Location = new System.Drawing.Point(102, 206);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(160, 20);
+            this.txtEmail.Size = new System.Drawing.Size(290, 29);
             this.txtEmail.TabIndex = 3;
             // 
             // btnFilterEmail
             // 
-            this.btnFilterEmail.Location = new System.Drawing.Point(74, 84);
+            this.btnFilterEmail.Location = new System.Drawing.Point(102, 252);
+            this.btnFilterEmail.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnFilterEmail.Name = "btnFilterEmail";
-            this.btnFilterEmail.Size = new System.Drawing.Size(119, 31);
+            this.btnFilterEmail.Size = new System.Drawing.Size(218, 57);
             this.btnFilterEmail.TabIndex = 4;
             this.btnFilterEmail.Text = "Filter";
             this.btnFilterEmail.UseVisualStyleBackColor = true;
@@ -91,19 +98,20 @@ namespace GardenGroupUI
             // 
             this.lblusermanagement.AutoSize = true;
             this.lblusermanagement.Font = new System.Drawing.Font("Segoe UI", 15.85714F, System.Drawing.FontStyle.Bold);
-            this.lblusermanagement.Location = new System.Drawing.Point(58, 8);
-            this.lblusermanagement.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblusermanagement.Location = new System.Drawing.Point(93, 101);
+            this.lblusermanagement.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblusermanagement.Name = "lblusermanagement";
-            this.lblusermanagement.Size = new System.Drawing.Size(204, 30);
+            this.lblusermanagement.Size = new System.Drawing.Size(340, 50);
             this.lblusermanagement.TabIndex = 7;
             this.lblusermanagement.Text = "User Management";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(74, 41);
+            this.label1.Location = new System.Drawing.Point(102, 173);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 13);
+            this.label1.Size = new System.Drawing.Size(136, 25);
             this.label1.TabIndex = 8;
             this.label1.Text = "Fill in full email";
             // 
@@ -117,9 +125,10 @@ namespace GardenGroupUI
             this.Ticket});
             this.lvUserManagement.FullRowSelect = true;
             this.lvUserManagement.HideSelection = false;
-            this.lvUserManagement.Location = new System.Drawing.Point(74, 131);
+            this.lvUserManagement.Location = new System.Drawing.Point(102, 338);
+            this.lvUserManagement.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.lvUserManagement.Name = "lvUserManagement";
-            this.lvUserManagement.Size = new System.Drawing.Size(494, 205);
+            this.lvUserManagement.Size = new System.Drawing.Size(902, 375);
             this.lvUserManagement.TabIndex = 9;
             this.lvUserManagement.UseCompatibleStateImageBehavior = false;
             this.lvUserManagement.View = System.Windows.Forms.View.Details;
@@ -150,9 +159,10 @@ namespace GardenGroupUI
             // 
             // Refresh
             // 
-            this.Refresh.Location = new System.Drawing.Point(261, 58);
+            this.Refresh.Location = new System.Drawing.Point(445, 204);
+            this.Refresh.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Refresh.Name = "Refresh";
-            this.Refresh.Size = new System.Drawing.Size(64, 20);
+            this.Refresh.Size = new System.Drawing.Size(117, 37);
             this.Refresh.TabIndex = 10;
             this.Refresh.Text = "Refresh";
             this.Refresh.UseVisualStyleBackColor = true;
@@ -162,10 +172,10 @@ namespace GardenGroupUI
             // 
             this.lblLicenseInfo.AutoSize = true;
             this.lblLicenseInfo.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold);
-            this.lblLicenseInfo.Location = new System.Drawing.Point(459, 48);
-            this.lblLicenseInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLicenseInfo.Location = new System.Drawing.Point(928, 101);
+            this.lblLicenseInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLicenseInfo.Name = "lblLicenseInfo";
-            this.lblLicenseInfo.Size = new System.Drawing.Size(215, 19);
+            this.lblLicenseInfo.Size = new System.Drawing.Size(368, 32);
             this.lblLicenseInfo.TabIndex = 17;
             this.lblLicenseInfo.Text = "Licensed to: The Garden Group";
             // 
@@ -173,28 +183,68 @@ namespace GardenGroupUI
             // 
             this.lblNoDesk.AutoSize = true;
             this.lblNoDesk.Font = new System.Drawing.Font("Segoe UI", 26.14286F, System.Drawing.FontStyle.Bold);
-            this.lblNoDesk.Location = new System.Drawing.Point(509, 9);
-            this.lblNoDesk.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNoDesk.Location = new System.Drawing.Point(1019, 29);
+            this.lblNoDesk.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNoDesk.Name = "lblNoDesk";
-            this.lblNoDesk.Size = new System.Drawing.Size(149, 47);
+            this.lblNoDesk.Size = new System.Drawing.Size(264, 84);
             this.lblNoDesk.TabIndex = 16;
             this.lblNoDesk.Text = "NoDesk";
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(363, 341);
+            this.btnUpdate.Location = new System.Drawing.Point(656, 725);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(119, 31);
+            this.btnUpdate.Size = new System.Drawing.Size(218, 57);
             this.btnUpdate.TabIndex = 20;
             this.btnUpdate.Text = "+-  UPDATE USER";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // bttnUserManagement
+            // 
+            this.bttnUserManagement.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.bttnUserManagement.Location = new System.Drawing.Point(1083, 155);
+            this.bttnUserManagement.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.bttnUserManagement.Name = "bttnUserManagement";
+            this.bttnUserManagement.Size = new System.Drawing.Size(200, 37);
+            this.bttnUserManagement.TabIndex = 31;
+            this.bttnUserManagement.Text = "User Management";
+            this.bttnUserManagement.UseVisualStyleBackColor = false;
+            this.bttnUserManagement.Click += new System.EventHandler(this.bttnUserManagement_Click);
+            // 
+            // bttnIncidentManagement
+            // 
+            this.bttnIncidentManagement.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.bttnIncidentManagement.Location = new System.Drawing.Point(875, 156);
+            this.bttnIncidentManagement.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.bttnIncidentManagement.Name = "bttnIncidentManagement";
+            this.bttnIncidentManagement.Size = new System.Drawing.Size(200, 37);
+            this.bttnIncidentManagement.TabIndex = 30;
+            this.bttnIncidentManagement.Text = "Incident Management";
+            this.bttnIncidentManagement.UseVisualStyleBackColor = false;
+            this.bttnIncidentManagement.Click += new System.EventHandler(this.bttnIncidentManagement_Click);
+            // 
+            // bttnDashboard
+            // 
+            this.bttnDashboard.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.bttnDashboard.Location = new System.Drawing.Point(667, 156);
+            this.bttnDashboard.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.bttnDashboard.Name = "bttnDashboard";
+            this.bttnDashboard.Size = new System.Drawing.Size(200, 37);
+            this.bttnDashboard.TabIndex = 29;
+            this.bttnDashboard.Text = "Dashboard";
+            this.bttnDashboard.UseVisualStyleBackColor = false;
+            this.bttnDashboard.Click += new System.EventHandler(this.bttnDashboard_Click);
+            // 
             // UserMangement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 390);
+            this.ClientSize = new System.Drawing.Size(1321, 929);
+            this.Controls.Add(this.bttnUserManagement);
+            this.Controls.Add(this.bttnIncidentManagement);
+            this.Controls.Add(this.bttnDashboard);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.lblLicenseInfo);
             this.Controls.Add(this.lblNoDesk);
@@ -206,6 +256,7 @@ namespace GardenGroupUI
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.btnRemoveUser);
             this.Controls.Add(this.btnAddingUser);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "UserMangement";
             this.Text = "UserMangement";
             this.ResumeLayout(false);
@@ -230,5 +281,8 @@ namespace GardenGroupUI
         private System.Windows.Forms.Label lblLicenseInfo;
         private System.Windows.Forms.Label lblNoDesk;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button bttnUserManagement;
+        private System.Windows.Forms.Button bttnIncidentManagement;
+        private System.Windows.Forms.Button bttnDashboard;
     }
 }
